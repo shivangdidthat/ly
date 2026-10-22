@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 export default function Home() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
   const [answer, setAnswer] = useState<"yes" | "no" | null>(null);
   const [noScale, setNoScale] = useState(1);
   const [glitchStyle, setGlitchStyle] = useState({});
@@ -40,10 +41,10 @@ export default function Home() {
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
           style={{ mixBlendMode: "screen", opacity: 0.5 }}
         >
-          <source src="/petals.mp4" type="video/mp4" />
+          <source src={`${basePath}/petals.mp4`} type="video/mp4" />
         </video>
         <img
-          src="/eminem.png"
+          src={`${basePath}/eminem.png`}
           alt="Eminem throwing flowers"
           className="w-96 md:w-[32rem] rounded-2xl mb-10 relative z-10"
         />
@@ -64,7 +65,7 @@ export default function Home() {
         className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         style={{ mixBlendMode: "screen", opacity: 0.5 }}
       >
-        <source src="/petals.mp4" type="video/mp4" />
+        <source src={`${basePath}/petals.mp4`} type="video/mp4" />
       </video>
       <div style={glitchStyle} className="relative z-10">
         <h1 className="text-4xl md:text-6xl font-bold text-[#d63384] mb-6 pixel-font">

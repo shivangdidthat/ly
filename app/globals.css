@@ -67,7 +67,7 @@ body {
 }
 
 .pixel-font {
-  font-family: 'Minecraft', monospace !important;
+  font-family: var(--font-minecraft), 'Minecraft', monospace !important;
 }
 
 @keyframes glitch {
